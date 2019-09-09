@@ -1,0 +1,17 @@
+import unittest
+
+class Testcase(unittest.TestCase):
+
+    def test01(self):
+        a = 1
+        b = 1
+        c = a + b
+        self.assertEqual(c, 3)
+    def test02(self):
+        a = 1
+        b = 1
+        c = a + b
+        self.assertEqual(c, 4)
+
+if __name__ == '__main__':
+    unittest.main()

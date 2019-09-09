@@ -1,0 +1,19 @@
+from run import Testcase
+from HTMLTestRunner import HTMLTestRunner
+import unittest
+class Test(unittest.TestCase):
+
+        suit = unittest.TestSuite()
+        case_list = ['test01', 'test02']
+        for case in case_list:
+            suit.addTest(Testcase(case))
+            #unittest.TextTestRunner(verbosity=2).run(suit)
+
+    # 生成html格式测试报告步骤
+        with open('report.html', 'wb') as f:  # 如果要生成在上级目录使用‘../’
+            HTMLTestRunner(
+              stream=f,  # 设定测试数据写入的文件
+             title='QQ邮箱登录测试报告',  # 设定测试报告的标题
+             description='验证qq邮箱登录功能',  # 设定测试报告的描述
+             verbosity=2  # 对每一个测试用例都生成一个测试报告
+          ).run(suit)
